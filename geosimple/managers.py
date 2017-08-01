@@ -50,7 +50,7 @@ class GeoQuerySet(models.query.QuerySet):
         expanded = geohash.expand()
         filters = models.Q()
         for item in expanded:
-            filters.add(models.Q(**{"%s__istartswith" % field_name: item}), models.Q.OR)
+            filters.add(models.Q(**{"%s__startswith" % field_name: item}), models.Q.OR)
         return filters
 
     def order_by_distance(self):
