@@ -4,8 +4,6 @@ from geosimple.utils import Geohash, convert_to_point
 
 class GeohashField(models.CharField):
 
-    __metaclass__ = models.SubfieldBase
-
     def __init__(self, *args, **kwargs):
         kwargs['max_length'] = 12
         kwargs['db_index'] = True
