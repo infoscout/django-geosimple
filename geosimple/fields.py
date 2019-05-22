@@ -4,7 +4,7 @@ from geosimple.utils import Geohash, convert_to_point
 
 class GeohashField(models.CharField):
 
-    __metaclass__ = type if DJANGO_VERSION >= (1, 8) else models.SubfieldBase
+    __metaclass__ = type
 
     def __init__(self, *args, **kwargs):
         kwargs['max_length'] = 12
