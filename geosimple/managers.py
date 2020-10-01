@@ -1,8 +1,8 @@
 from copy import copy
-from django.db import models
-from geosimple.utils import geohash_length_for_error, convert_to_point
-from geopy.distance import Distance
 
+from django.db import models
+from geopy.distance import Distance
+from geosimple.utils import convert_to_point, geohash_length_for_error
 
 APPROX_DISTANCE_POSTFIX = "__approx_distance_lt"
 EXACT_DISTANCE_POSTFIX = "__distance_lt"
@@ -23,7 +23,7 @@ class GeoQuerySet(models.query.QuerySet):
         """Override filter to support custom lookups"""
 
         filters = None
-        for key in kwargs.keys():
+        for key in list(kwargs.keys()):
             if not key.endswith((APPROX_DISTANCE_POSTFIX, EXACT_DISTANCE_POSTFIX)):
                 continue
 

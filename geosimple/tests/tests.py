@@ -1,6 +1,6 @@
 from django.test import TestCase
-from geosimple.utils import Point, Geohash, convert_to_point, geohash_length_for_error
 from geosimple.tests.models import CoffeeShop
+from geosimple.utils import Geohash, Point, convert_to_point, geohash_length_for_error
 
 # Example lat/lon pair and corresponding geohash
 LAT = 50.822482

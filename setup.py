@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from setuptools import setup
-import re
 import os
+import re
 import sys
 
+from setuptools import setup
 
 name = 'django-geosimple'
 package = 'geosimple'
@@ -14,7 +14,7 @@ url = 'http://github.com/dabapps/django-geosimple/'
 author = 'Jamie Matthews'
 author_email = 'jamie@dabapps.com'
 license = 'BSD'
-install_requires = ['geopy==0.98.3','python-geohash==0.8.5']
+install_requires = ['geopy==0.98.3', 'python-geohash==0.8.5']
 
 
 def get_version(package):
@@ -53,9 +53,9 @@ def get_package_data(package):
 if sys.argv[-1] == 'publish':
     os.system("python setup.py sdist upload")
     args = {'version': get_version(package)}
-    print "You probably want to also tag the version now:"
-    print "  git tag -a %(version)s -m 'version %(version)s'" % args
-    print "  git push --tags"
+    print("You probably want to also tag the version now:")
+    print("  git tag -a %(version)s -m 'version %(version)s'" % args)
+    print("  git push --tags")
     sys.exit()
 
 
