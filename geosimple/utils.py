@@ -1,7 +1,6 @@
 import geohash
-from geopy.point import Point as GeopyPoint
 from geopy.distance import distance
-
+from geopy.point import Point as GeopyPoint
 
 # Mapping geohash length (in characters) to +/- error size (in kilometres)
 GEOHASH_ERROR_SIZES = {
