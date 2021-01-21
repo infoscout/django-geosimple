@@ -10,7 +10,6 @@ GEOHASH = 'gcpchgbyrvrf'
 
 
 class PointConversionTestCase(TestCase):
-
     def test_tuple(self):
         point = convert_to_point((LAT, LON))
         self.assertEqual(point.latitude, LAT)
