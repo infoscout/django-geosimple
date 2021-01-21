@@ -1,11 +1,11 @@
 
 version: 2
 jobs:
-  py35-tests: &test-template
+  py36-tests: &test-template
     docker:
-      - image: circleci/python:3.5
+      - image: circleci/python:3.6
     environment:
-      - TOX_ENV=py35-django110
+      - TOX_ENV=py36-django111
     steps:
       - checkout
       - run:
@@ -22,4 +22,4 @@ workflows:
   version: 2
   pr-checks:
     jobs:
-      - py35-tests
+      - py36-tests
