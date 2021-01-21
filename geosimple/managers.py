@@ -1,6 +1,8 @@
 from copy import copy, deepcopy
+
 from django.db import models
 from geopy.distance import Distance
+
 from geosimple.utils import convert_to_point, geohash_length_for_error
 
 APPROX_DISTANCE_POSTFIX = "__approx_distance_lt"

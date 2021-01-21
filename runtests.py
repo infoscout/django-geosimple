@@ -1,8 +1,7 @@
 #!/usr/bin/env python
-import sys
-import subprocess
 import logging
-
+import subprocess
+import sys
 
 logger = logging.getLogger(__name__)
 FLAKE8_ARGS = ['geosimple/', '--ignore=E501', '--exclude=__init__.py']

@@ -1,8 +1,8 @@
+import six
 from django import VERSION as DJANGO_VERSION
 from django.db import models
-from django import VERSION as DJANGO_VERSION
+
 from geosimple.utils import Geohash, convert_to_point
-import six
 
 
 class GeohashField(models.CharField):
