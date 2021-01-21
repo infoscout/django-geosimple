@@ -97,7 +97,7 @@ class GeoQuerySet(models.query.QuerySet):
 
 class GeoManager(models.Manager):
 
-    def get_queryset(self):
+    def get_query_set(self):
         return GeoQuerySet(self.model)
 
     def get_queryset(self):

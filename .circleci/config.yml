@@ -4,10 +4,6 @@ jobs:
   py35-tests: &test-template
     docker:
       - image: circleci/python:3.5
-      - image: mysql:5.6.33
-        environment:
-          - MYSQL_ALLOW_EMPTY_PASSWORD=true
-          - MYSQL_DATABASE=django_auditor
     environment:
       - TOX_ENV=py35-django110
     steps:
