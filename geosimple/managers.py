@@ -1,7 +1,8 @@
-from copy import copy
+from copy import copy, deepcopy
 
 from django.db import models
 from geopy.distance import Distance
+
 from geosimple.utils import convert_to_point, geohash_length_for_error
 
 APPROX_DISTANCE_POSTFIX = "__approx_distance_lt"
@@ -23,7 +24,7 @@ class GeoQuerySet(models.query.QuerySet):
         """Override filter to support custom lookups"""
 
         filters = None
-        for key in list(kwargs):
+        for key in deepcopy(kwargs).keys():
             if not key.endswith((APPROX_DISTANCE_POSTFIX, EXACT_DISTANCE_POSTFIX)):
                 continue
 
@@ -74,11 +75,11 @@ class GeoQuerySet(models.query.QuerySet):
             result_location = getattr(result, field_name)
             distance_from_location = result_location.point.distance_from(convert_to_point(location))
             setattr(result, distance_property_name, distance_from_location)
-            if distance_from_location < radius:
+            if distance_from_location.km < radius.km:
                 results.append(result)
 
         if self._postprocess.get('sort'):
-            return iter(sorted(results, key=lambda item: getattr(item, distance_property_name)))
+            return iter(sorted(results, key=lambda item: getattr(item, distance_property_name).km))
         return iter(results)
 
     def count(self):
@@ -96,5 +97,8 @@ class GeoQuerySet(models.query.QuerySet):
 
 class GeoManager(models.Manager):
 
-    def get_queryset(self):
+    def get_query_set(self):
         return GeoQuerySet(self.model)
+
+    def get_queryset(self):
+        return self.get_query_set()

@@ -1,0 +1,25 @@
+
+version: 2
+jobs:
+  py36-tests: &test-template
+    docker:
+      - image: circleci/python:3.6
+    environment:
+      - TOX_ENV=py36-django111
+    steps:
+      - checkout
+      - run:
+          name: Setup a virtualenv
+          command: virtualenv venv
+      - run:
+          name: Run tests with tox
+          command: |
+            source venv/bin/activate
+            pip install tox
+            echo $TOX_ENV | tr ";" "\n" | xargs -L 1 -I % tox -e $TOX_ENV
+
+workflows:
+  version: 2
+  pr-checks:
+    jobs:
+      - py36-tests

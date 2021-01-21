@@ -5,3 +5,7 @@ build/
 *.egg-info/
 /env/
 *.bak
+htmlcov/
+
+.coverage
+.tox
