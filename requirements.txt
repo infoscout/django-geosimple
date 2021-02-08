@@ -3,4 +3,4 @@ geopy==1.11.0
 python-geohash==0.8.5
 flake8==3.0.4
 coverage==4.2
-six==1.10.0
+six>=1.10.0
