@@ -14,7 +14,7 @@ url = 'http://github.com/dabapps/django-geosimple/'
 author = 'Jamie Matthews'
 author_email = 'jamie@dabapps.com'
 license = 'BSD'
-install_requires = ['geopy==1.11.0', 'python-geohash==0.8.5', 'six==1.10.0']
+install_requires = ['geopy==1.11.0', 'python-geohash==0.8.5', 'six>=1.10.0']
 
 
 def get_version(package):
