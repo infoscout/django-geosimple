@@ -5,7 +5,7 @@ jobs:
     docker:
       - image: circleci/python:3.6
     environment:
-      - TOX_ENV=py36-django111
+      - TOX_ENV=py36-django30
     steps:
       - checkout
       - run:

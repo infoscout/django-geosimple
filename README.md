@@ -5,7 +5,7 @@ django-geosimple [![travis][travis-image]][travis-url] [![pypi][pypi-image]][pyp
 ### Supports
 
  - Python 2.7, 3.4, 3.6
- - Django 1.6 up to 1.11
+ - Django 3.0.14
 
 
 GeoDjango is an incredibly powerful set of extensions to Django for handling complex geospatial data. However, it has a long list of prerequisites (a spatial database such as PostgreSQL with PostGIS, GEOS, a specialised database backend, etc). For many projects that have only basic geospatial requirements, the overhead of getting GeoDjango up and running is painful.
