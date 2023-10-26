@@ -1,6 +1,6 @@
-Django==3.0.14
-geopy==1.11.0
+Django==3.2.22
+geopy==2.3.0
 python-geohash==0.8.5
-flake8==3.0.4
+flake8==6.1.0
 coverage==4.2
 six>=1.10.0
