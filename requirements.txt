@@ -1,4 +1,4 @@
-Django==3.2.22
+Django==4.0.10
 geopy==2.3.0
 python-geohash==0.8.5
 flake8==6.1.0
