@@ -5,7 +5,7 @@ import sys
 
 logger = logging.getLogger(__name__)
 FLAKE8_ARGS = ['geosimple/', '--ignore=E501', '--exclude=__init__.py']
-COVERAGE_ARGS = ['--source=geosimple', '--omit=**tests**', 'manage.py', 'test']
+COVERAGE_ARGS = ['--source=geosimple', '--omit=**/tests/**', 'manage.py', 'test']
 
 
 def exit_on_failure(command, message=None):
